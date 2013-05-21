@@ -11,9 +11,21 @@
     </div>
     </div>
     <div class="control-group">
-    <label class="control-label" for="inputName">Name</label>
+    <label class="control-label" for="inputName">Page Title</label>
     <div class="controls">
-    <input type="text" id="inputName" placeholder="Name" value="{{ data.name }}">
+    <input type="text" id="inputTitle" placeholder="Page Title" value="{{ data.title }}">
+    </div>
+    </div>
+    <div class="control-group">
+    <label class="control-label" for="inputName">Link Name</label>
+    <div class="controls">
+    <input type="text" id="inputName" placeholder="Link Name" value="{{ data.name }}">
+    </div>
+    </div>
+    <div class="control-group">
+    <label class="control-label" for="inputName">Content</label>
+    <div class="controls">
+    <textarea name="inputContent">{{ data.content }}</textarea>
     </div>
     </div>
     <button type="submit" class="btn">Save</button>
