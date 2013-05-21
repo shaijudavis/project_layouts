@@ -13,6 +13,16 @@ from flatpages_plus.models import FlatPage
 
 DEFAULT_TEMPLATE = 'flatpages_plus/default.html'
 
+def update(request, num):
+    print num
+    d = FlatPage.objects.get(pk=num)
+    t = loader.get_template("flatpages_plus/update.html")
+    c = Context({
+            "data":d,
+         })
+    # return
+    return HttpResponse(t.render(c))
+
 def list(request):
     d = FlatPage.objects.all()
     t = loader.get_template("flatpages_plus/list.html")
