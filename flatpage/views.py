@@ -14,7 +14,6 @@ from flatpages_plus.models import FlatPage
 DEFAULT_TEMPLATE = 'flatpages_plus/default.html'
 
 def update(request, id):
-    print id
     d = FlatPage.objects.get(pk=id)
     t = loader.get_template("flatpages_plus/update.html")
     c = Context({
