@@ -14,7 +14,7 @@ from flatpages_plus.models import FlatPage
 DEFAULT_TEMPLATE = 'flatpages_plus/default.html'
 
 def update(request, id):
-    print num
+    print id
     d = FlatPage.objects.get(pk=id)
     t = loader.get_template("flatpages_plus/update.html")
     c = Context({
@@ -57,7 +57,6 @@ def flatpage(request, url, **kwargs):
         
     #extracted_url = url.split("/")[1]
     extracted_url = url.replace('pages/','')
-    print extracted_url
     
     f = get_object_or_404(FlatPage, url__exact=extracted_url, #status='p',
         sites__id__exact=settings.SITE_ID)
