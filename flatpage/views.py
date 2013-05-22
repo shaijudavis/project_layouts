@@ -61,7 +61,7 @@ def flatpage(request, url, **kwargs):
         sites__id__exact=settings.SITE_ID)
     return render_flatpage(request, f)
 
-def showpage(request, **kwargs):
+def showpage(request, url, **kwargs):
     """
     Public interface to the flat page view.
     
