@@ -28,7 +28,6 @@ def update(request, id):
             })
     # return
         return HttpResponse(t.render(c))
-    elif
 
 def list(request):
     d = FlatPage.objects.all()
