@@ -28,9 +28,7 @@ def update(request, id):
           #  })
     # return
         #return HttpResponse(t.render(c))
-       return render_to_response("flatpages_plus/update.html", {
-        "form": form,
-        })
+       return render_to_response("flatpages_plus/update.html", {"form": form,})
 
 def list(request):
     d = FlatPage.objects.all()
