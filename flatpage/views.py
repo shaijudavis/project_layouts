@@ -10,17 +10,25 @@ from django.utils.safestring import mark_safe
 from django.views.decorators.csrf import csrf_protect
 
 from flatpages_plus.models import FlatPage
+from forms import FlatpageForm
 
 DEFAULT_TEMPLATE = 'flatpages_plus/default.html'
 
 def update(request, id):
-    d = FlatPage.objects.get(pk=id)
-    t = loader.get_template("flatpages_plus/update.html")
-    c = Context({
-            "data":d,
-         })
+    if request.method == 'POST':
+        a = FlatPage.objects.get(pk=id)
+        f = FlatpageForm(request.POST, instance=a)
+        f.save()
+    else:
+        d = FlatPage.objects.get(pk=id)
+        form = FlatpageForm(FlatPage.objects.get(pk=id))
+        t = loader.get_template("flatpages_plus/update.html")
+        c = Context({
+            "form":form,
+            })
     # return
-    return HttpResponse(t.render(c))
+        return HttpResponse(t.render(c))
+    elif
 
 def list(request):
     d = FlatPage.objects.all()
