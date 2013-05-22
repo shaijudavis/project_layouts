@@ -77,7 +77,10 @@ def showpage(request, url, **kwargs):
     if not url.startswith('/'):
         url = "/" + url
         
-    f = get_object_or_404(FlatPage, url__exact=extracted_url, #status='p',
+    if url.find("pages/") == -1:
+        url = url.replace('pages/','')
+        
+    f = get_object_or_404(FlatPage, url__exact=url, #status='p',
         sites__id__exact=settings.SITE_ID)
     return render_flatpage(request, f)
 
