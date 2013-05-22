@@ -55,8 +55,7 @@ def flatpage(request, url, **kwargs):
         url = "/" + url
         
     #extracted_url = url.split("/")[1]
-    if 'pages/' in url
-        extracted_url = url.replace('pages/','')
+    extracted_url = url.replace('pages/','')
     
     f = get_object_or_404(FlatPage, url__exact=extracted_url, #status='p',
         sites__id__exact=settings.SITE_ID)
