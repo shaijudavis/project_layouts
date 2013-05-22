@@ -55,8 +55,29 @@ def flatpage(request, url, **kwargs):
         url = "/" + url
         
     #extracted_url = url.split("/")[1]
-    extracted_url = url.replace('pages/','')
+    if 'pages/' in url
+        extracted_url = url.replace('pages/','')
     
+    f = get_object_or_404(FlatPage, url__exact=extracted_url, #status='p',
+        sites__id__exact=settings.SITE_ID)
+    return render_flatpage(request, f)
+
+def showpage(request, **kwargs):
+    """
+    Public interface to the flat page view.
+    
+    Models: `flatpages.flatpages`
+    Templates: Uses the template defined by the ``template_name`` field,
+        or `flatpages_plus/default.html` if template_name is not defined.
+    Context:
+        flatpage
+            `flatpages.flatpages` object
+    """
+    if not url.endswith('/') and settings.APPEND_SLASH:
+        return HttpResponseRedirect("%s/" % request.path)
+    if not url.startswith('/'):
+        url = "/" + url
+        
     f = get_object_or_404(FlatPage, url__exact=extracted_url, #status='p',
         sites__id__exact=settings.SITE_ID)
     return render_flatpage(request, f)
