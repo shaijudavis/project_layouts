@@ -6,7 +6,7 @@ urlpatterns = patterns('flatpage.views',
     #     name='flatpage'
     # ),
     (r'^list/', 'list'),
-    (r'^update/(?P<id>\d+)/$', 'update'),
+    (r'^pages/update/(?P<id>\d+)/$', 'update'),
     (r'^pages/(?P<url>.*)$', 'flatpage'),
-    (r'', 'showpage'),
+    (r'(?P<url>.*)$', 'showpage'),
 )
