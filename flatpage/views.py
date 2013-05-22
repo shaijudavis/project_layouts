@@ -5,7 +5,7 @@ from django.core.urlresolvers import reverse
 from django.core.xheaders import populate_xheaders
 from django.http import HttpResponse, HttpResponseRedirect, Http404
 from django.shortcuts import get_object_or_404
-from django.template import loader, RequestContext, Context
+from django.template import loader, RequestContext, Context, render_to_response
 from django.utils.safestring import mark_safe
 from django.views.decorators.csrf import csrf_protect
 
