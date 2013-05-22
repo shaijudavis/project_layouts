@@ -21,7 +21,7 @@ def update(request, id):
         f.save()
     else:
         d = FlatPage.objects.get(pk=id)
-        form = FlatpageForm(FlatPage.objects.get(pk=id))
+        form = FlatpageForm(d)
         #t = loader.get_template("flatpages_plus/update.html")
         #c = Context({
          #   "form":form,
