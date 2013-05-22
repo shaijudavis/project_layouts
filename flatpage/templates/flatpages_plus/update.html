@@ -5,5 +5,8 @@
 {% block base_content %}
 <form method="post" action="" class="form-horizontal">
         {{ form }}
+        {% for field in form %}
+            {{ field.label_tag }}: {{ field }}
+        {% endfor %}
 </form>
 {% endblock %}    
