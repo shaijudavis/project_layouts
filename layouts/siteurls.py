@@ -1,5 +1,5 @@
 from django.conf.urls.defaults import *
 
-urlpatterns = patterns('flatpage.views',
+urlpatterns = patterns('layouts.views',
     (r'', 'showpage'),
 )
