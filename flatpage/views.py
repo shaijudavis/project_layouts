@@ -19,6 +19,14 @@ def update(request, id):
         a = FlatPage.objects.get(pk=id)
         f = FlatpageForm(request.POST, instance=a)
         f.save()
+        
+        d = FlatPage.objects.all()
+        t = loader.get_template("flatpages_plus/list.html")
+        c = Context({
+            "data":d,
+            })
+    # return
+        return HttpResponse(t.render(c))
     else:
         d = FlatPage.objects.get(pk=id)
         form = FlatpageForm(instance=d)
