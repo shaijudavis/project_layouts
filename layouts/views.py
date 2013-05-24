@@ -57,6 +57,7 @@ def list(request):
 # without any CSRF checks. Therefore, we only
 # CSRF protect the internal implementation.
 def flatpage(request, url, **kwargs):
+    print url
     """
     Public interface to the flat page view.
     
@@ -67,7 +68,6 @@ def flatpage(request, url, **kwargs):
         flatpage
             `flatpages.flatpages` object
     """
-    print url    
     if not url.endswith('/') and settings.APPEND_SLASH:
         return HttpResponseRedirect("%s/" % request.path)
     if not url.startswith('/'):
