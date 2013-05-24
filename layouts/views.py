@@ -42,12 +42,15 @@ def update(request, id):
 
 def list(request):
     d = FlatPage.objects.all()
-    t = loader.get_template("flatpages_plus/list.html")
-    c = Context({
-            "data":d,
-         },context_instance=RequestContext(request))
+#    t = loader.get_template("flatpages_plus/list.html")
+#    c = Context({
+#            "data":d,
+#         },context_instance=RequestContext(request))
     # return
-    return HttpResponse(t.render(c))
+    #return HttpResponse(t.render(c))
+    return render_to_response("flatpages_plus/list.html",{
+            "data": d }, RequestContext(request),
+        )
 # This view is called from FlatpageFallbackMiddleware.process_response
 # when a 404 is raised, which often means CsrfViewMiddleware.process_view
 # has not been called even if CsrfViewMiddleware is installed. So we need
