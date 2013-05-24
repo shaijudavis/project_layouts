@@ -72,7 +72,7 @@ def flatpage(request, url, **kwargs):
         return HttpResponseRedirect("%s/" % request.path)
     if not url.startswith('/'):
         url = "/" + url
-     print url   
+    print url   
     #extracted_url = url.split("/")[1]
     extracted_url = url.replace('pages/','')
     
