@@ -67,6 +67,7 @@ def flatpage(request, url, **kwargs):
         flatpage
             `flatpages.flatpages` object
     """
+print url    
     if not url.endswith('/') and settings.APPEND_SLASH:
         return HttpResponseRedirect("%s/" % request.path)
     if not url.startswith('/'):
