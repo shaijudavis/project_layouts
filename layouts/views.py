@@ -45,7 +45,7 @@ def list(request):
     d = FlatPage.objects.all()
     t = loader.get_template("flatpages_plus/list.html")
     c = Context({
-            "data":d, context_instance=context
+            "data":d, context_instance=context,
          })
     # return
     return HttpResponse(t.render(c))
