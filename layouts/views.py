@@ -68,11 +68,11 @@ def flatpage(request, url, **kwargs):
         flatpage
             `flatpages.flatpages` object
     """
-    if not url.endswith('/') and settings.APPEND_SLASH:
-        return HttpResponseRedirect("%s/" % request.path)
-    if not url.startswith('/'):
-        url = "/" + url
-    print url   
+#   if not url.endswith('/') and settings.APPEND_SLASH:
+#        return HttpResponseRedirect("%s/" % request.path)
+#    if not url.startswith('/'):
+#        url = "/" + url
+#    print url   
     #extracted_url = url.split("/")[1]
     extracted_url = url.replace('pages/','')
     
