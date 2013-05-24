@@ -41,11 +41,10 @@ def update(request, id):
         )
 
 def list(request):
-    context = RequestContext(request)
     d = FlatPage.objects.all()
     t = loader.get_template("flatpages_plus/list.html")
     c = Context({
-            "data":d, context_instance=context,
+            "data":d,
          })
     # return
     return HttpResponse(t.render(c))
