@@ -57,6 +57,7 @@ def list(request):
 # without any CSRF checks. Therefore, we only
 # CSRF protect the internal implementation.
 def flatpage(request, url, **kwargs):
+    print url
     """
     Public interface to the flat page view.
     
