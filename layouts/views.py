@@ -45,7 +45,7 @@ def list(request):
     t = loader.get_template("flatpages_plus/list.html")
     c = Context({
             "data":d,
-         })
+         },context_instance=RequestContext(request))
     # return
     return HttpResponse(t.render(c))
 # This view is called from FlatpageFallbackMiddleware.process_response
