@@ -211,7 +211,7 @@ def render_flatpage(request, f):
             # because it would cause a 404 error if we did.
             bu = None
         if(bn == '/'):
-            bu = '/weblob'
+            bu = '/weblog'
         breadcrumbs += [{ # Contsruct a dictionary for the breadcrumb entity.
             'url': bu,
             'name': bn,
