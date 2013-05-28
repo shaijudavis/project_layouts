@@ -210,7 +210,7 @@ def render_flatpage(request, f):
             # Return None if the flatpage doesn't exist so we don't link to it, 
             # because it would cause a 404 error if we did.
             bu = None
-        if(bn == '/'):"
+        if(bn == '/'):
             bu = '/weblob'
         breadcrumbs += [{ # Contsruct a dictionary for the breadcrumb entity.
             'url': bu,
