@@ -1,0 +1,25 @@
+{% extends "flatpage_views/base_flatpage.html" %}
+
+{% block title %}::List Pages{% endblock %}
+
+{% block base_content %}
+
+    <table width="100%" class="table table-bordered table-hover">
+    	<thead>
+    	<th>Title</t>
+    	<th>Url</t>
+    	<th>Actions</th>
+    	</thead>
+    	<tbody>
+    {% for list in data %}
+    	<tr>
+    		<td>{{ list.title }}</td>
+    		<td>{{ list.url }}</td>
+    		<td><a href="/help{{ list.url }}">View</a> | <a href="/help/update/{{ list.id }}">Edit</a></td>
+    	</tr>
+    {% endfor %}
+    </tbody>     
+    </table>
+
+{% endblock %}
+
