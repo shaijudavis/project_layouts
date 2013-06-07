@@ -5,7 +5,7 @@
 {% block base_content %}
 <form method="post" action="" class="form-horizontal">{% csrf_token %}
         {% for field in form %}
-        {% if field.name == 'sites' %}
+        	{% if field.name == 'sites' %}
     	     <div class="controls" style="display:none"> {{ field }}</div>
         	{% else %}
     <div class="control-group">
@@ -14,6 +14,6 @@
     </div>
     		{% endif %}
         {% endfor %}
-    <div><button type="submit" class="btn">Save</button></div>
+    <div class="span4 offset4"><button type="submit" class="btn">Save</button></div>
 </form>
 {% endblock %}    
