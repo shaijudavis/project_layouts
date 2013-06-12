@@ -34,7 +34,29 @@
     {% endif %}
     </tbody>     
     </table>
-
+	<div class="pagination">
+		  <ul>
+			{% if data.has_previous %}
+			  <li><a href="?page={{ help_items.previous_page_number }}">previous</a></li>
+			{% endif %}
+			{% if data.page_range_data.show_first %}
+			  <li><a href="?page=1">1</a></li>
+			{% endif %}
+			{% for i in data.page_range_data.page_range %}
+				{% ifequal i data.number %}
+					{{ i }}
+				{% else %}
+					<li><a href="?page={{ i }}">{{ i }}</a></li>
+				{% endifequal %}
+			{% endfor %}
+			{% if data.page_range_data.show_last %}
+				<li><a href="?page={{ data.paginator.num_pages }}">{{ data.paginator.num_pages }}</a></li>
+			{% endif %} 
+			{% if data.has_next %}
+				<li><a href="?page={{ data.next_page_number }}">next</a></li>
+			{% endif %}
+  		 </ul>
+		</div>
     {{ flatpage.content }}
 
 {% endblock %}
